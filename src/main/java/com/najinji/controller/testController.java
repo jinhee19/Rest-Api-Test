@@ -28,11 +28,19 @@ public class testController {
        return repository.findAll();
     }
 
-    /*@GetMapping(value="/{title}")
-    public String getTitle(@PathVariable String title){
-        Optional<Data> option = repository.findById(title);
+    @GetMapping(value="/titles")
+    public List<String> getTitle(){
+        /*Optional<Data> option = repository.findById(title);
         String name = option.get().getTitle();
         return name;
+         */
+        List<Data> lists = repository.findAll();
+        List<String> titles = new ArrayList<>(300);
+
+        for(int i = 0; i < lists.size(); i++)
+            titles.add(lists.get(i).getTitle());
+
+        return titles;
     }
-*/
+
 }
