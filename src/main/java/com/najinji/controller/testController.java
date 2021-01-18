@@ -3,10 +3,7 @@ package com.najinji.controller;
 import com.najinji.domain.data.Data;
 import com.najinji.domain.data.DataRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,7 +20,7 @@ public class testController {
         this.repository = repository;
     }
 
-    @GetMapping
+    @GetMapping(value="/select")
     public List<Data> list(){
        return repository.findAll();
     }
@@ -42,5 +39,21 @@ public class testController {
 
         return titles;
     }
+
+    // flask에서 추천지 5개 가져오기
+    @GetMapping(value="/recommend")
+    public List<String> getRecommend(){
+        List<String> recommends = new ArrayList<>();
+        
+        return recommends;
+    }
+
+    // 각 추천지에 대한 정보 
+    @GetMapping(value="/select/{title}")
+    public Data getPlace(@PathVariable("title") String title){
+        return repository.findById(title).orElse(null);
+    }
+    
+    // flask 서버에 검색명 전달
 
 }
