@@ -26,20 +26,18 @@
     <loaded-nodes>
       <connection connection-id="46b81422-3eeb-4fcc-8b3e-80cc4912b3bc">
         <schema name="mysql" object-types="view, table" />
+        <schema name="webservice" object-types="view, index, function, constraint, table, column, dataset trigger, procedure" />
       </connection>
     </loaded-nodes>
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="46b81422-3eeb-4fcc-8b3e-80cc4912b3bc">
-      <console name="Connection" type="STANDARD" schema="mysql" session="Main" />
-      <console name="Connection 1" type="STANDARD" schema="mysql" session="Main"><![CDATA[show databases;
+      <console name="Connection" type="STANDARD" schema="mysql" session="Main"><![CDATA[use webservice2;
 
 show tables;
 
-select * from gyeonju_data;
-
-use webservice2;
-
+select * from gyeongju_data;]]></console>
+      <console name="Connection 1" type="STANDARD" schema="mysql" session="Main"><![CDATA[show databases;
 show tables;
 
 select * from gyeongju_data;]]></console>
@@ -50,6 +48,14 @@ select * from gyeongju_data;]]></console>
   </component>
   <component name="DBNavigator.Project.DatabaseSessionManager">
     <connection id="46b81422-3eeb-4fcc-8b3e-80cc4912b3bc" />
+  </component>
+  <component name="DBNavigator.Project.DatasetFilterManager">
+    <filter-actions connection-id="46b81422-3eeb-4fcc-8b3e-80cc4912b3bc" dataset="webservice.gyeonju_data" active-filter-id="" />
+    <filter-actions connection-id="46b81422-3eeb-4fcc-8b3e-80cc4912b3bc" dataset="webservice.gyeongju_data" active-filter-id="ad3a1587-6c59-4f74-a8fe-5eac7b2b0e3e">
+      <filter id="ad3a1587-6c59-4f74-a8fe-5eac7b2b0e3e" name="Filter 1" temporary="false" custom-name="false" type="basic" join-type="AND">
+        <condition column="address" operator="=" value="" active="true" />
+      </filter>
+    </filter-actions>
   </component>
   <component name="DBNavigator.Project.EditorStateManager">
     <last-used-providers />
