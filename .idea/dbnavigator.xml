@@ -26,7 +26,6 @@
     <loaded-nodes>
       <connection connection-id="46b81422-3eeb-4fcc-8b3e-80cc4912b3bc">
         <schema name="mysql" object-types="view, table" />
-        <schema name="webservice" object-types="view, function, table, index, constraint, column, dataset trigger, procedure" />
       </connection>
     </loaded-nodes>
   </component>
@@ -37,7 +36,13 @@
 
 show tables;
 
-select * from gyeonju_data;]]></console>
+select * from gyeonju_data;
+
+use webservice2;
+
+show tables;
+
+select * from gyeongju_data;]]></console>
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">

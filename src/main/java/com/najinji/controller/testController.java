@@ -20,11 +20,13 @@ public class testController {
         this.repository = repository;
     }
 
+    // 전체 관광지 정보 가져옴
     @GetMapping(value="/select")
     public List<Data> list(){
        return repository.findAll();
     }
 
+    // 전체 관광지의 이름 가져옴
     @GetMapping(value="/titles")
     public List<String> getTitle(){
         /*Optional<Data> option = repository.findById(title);
@@ -40,20 +42,6 @@ public class testController {
         return titles;
     }
 
-    // flask에서 추천지 5개 가져오기
-    @GetMapping(value="/recommend")
-    public List<String> getRecommend(){
-        List<String> recommends = new ArrayList<>();
-        
-        return recommends;
-    }
 
-    // 각 추천지에 대한 정보 
-    @GetMapping(value="/select/{title}")
-    public Data getPlace(@PathVariable("title") String title){
-        return repository.findById(title).orElse(null);
-    }
-    
-    // flask 서버에 검색명 전달
 
 }
