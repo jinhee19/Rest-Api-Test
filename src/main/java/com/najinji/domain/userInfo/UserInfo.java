@@ -60,4 +60,5 @@ public class UserInfo {
     }
 
     public void setResidence(String residence) {this.residence = residence;}
+
 }

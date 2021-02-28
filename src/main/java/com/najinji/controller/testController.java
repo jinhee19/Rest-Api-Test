@@ -60,6 +60,12 @@ public class testController {
     // 사용자 정보 생성하기
     @PostMapping(value="/userinfo")
     public UserInfo createUserInfo(@Valid @RequestBody UserInfo userInfo){
+        List<UserInfo> allUser = userInfoRepository.findAll();
+
+        for(UserInfo info:allUser){
+            if(info.getEmail().equals(userInfo.getEmail()))
+                return null;
+        }
         return userInfoRepository.save(userInfo);
     }
 
@@ -107,6 +113,12 @@ public class testController {
     // 북마크 생성하기
     @PostMapping(value="/bookmark")
     public Bookmark createBookmark(@Valid @RequestBody Bookmark bookmark){
+        List<Bookmark> allBookmark = bookmarkRepository.findAll();
+
+        for(Bookmark bm : allBookmark){
+            if(bm.getTitle().equals(bookmark.getTitle()) && bm.getEmail().equals(bookmark.getEmail()))
+                return null;
+        }
         return bookmarkRepository.save(bookmark);
     }
 
