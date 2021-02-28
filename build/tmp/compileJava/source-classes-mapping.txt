@@ -1,5 +1,7 @@
 com/najinji/domain/data/Data.java
  com.najinji.domain.data.Data
+com/najinji/domain/userInfo/UserInfo.java
+ com.najinji.domain.userInfo.UserInfo
 com/najinji/Application.java
  com.najinji.Application
 com/najinji/domain/data/DataRepository.java
@@ -8,3 +10,9 @@ com/najinji/controller/testController.java
  com.najinji.controller.testController
 com/najinji/controller/MainController.java
  com.najinji.controller.MainController
+com/najinji/domain/userInfo/UserInfoRepository.java
+ com.najinji.domain.userInfo.UserInfoRepository
+com/najinji/domain/bookmark/BookmarkRepository.java
+ com.najinji.domain.bookmark.BookmarkRepository
+com/najinji/domain/bookmark/Bookmark.java
+ com.najinji.domain.bookmark.Bookmark

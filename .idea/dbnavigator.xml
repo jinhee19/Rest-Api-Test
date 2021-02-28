@@ -25,8 +25,7 @@
     <show-object-properties value="false" />
     <loaded-nodes>
       <connection connection-id="46b81422-3eeb-4fcc-8b3e-80cc4912b3bc">
-        <schema name="mysql" object-types="view, table" />
-        <schema name="webservice" object-types="view, index, function, constraint, table, column, dataset trigger, procedure" />
+        <schema name="webservice" object-types="view, table" />
       </connection>
     </loaded-nodes>
   </component>
@@ -38,9 +37,11 @@ show tables;
 
 select * from gyeongju_data;]]></console>
       <console name="Connection 1" type="STANDARD" schema="mysql" session="Main"><![CDATA[show databases;
+use webservice;
 show tables;
 
-select * from gyeongju_data;]]></console>
+select * from gyeonju_data;
+select * from user_info;]]></console>
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">

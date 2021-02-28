@@ -38,11 +38,15 @@ public class Data {
     @Column(columnDefinition = "TEXT",length = 500)
     private String detail_info;
 
+    @Column(columnDefinition = "TEXT",length = 500)
+    private String img_url;
+
+
     public Data(){
 
     }
 
-    public Data(String category, String title, String tag, String address, String phone, String homepage, String sum_info, String detail_info){
+    public Data(String category, String title, String tag, String address, String phone, String homepage, String sum_info, String detail_info, String img_url){
         this.category = category;
         this.title = title;
         this.tag = tag;
@@ -51,6 +55,7 @@ public class Data {
         this.homepage = homepage;
         this.sum_info = sum_info;
         this.detail_info = detail_info;
+        this.img_url = img_url;
     }
 
     public String getCategory(){
@@ -84,4 +89,6 @@ public class Data {
     public String getDetail_Info(){
         return detail_info;
     }
+
+    public String getUrl(){return img_url;}
 }
