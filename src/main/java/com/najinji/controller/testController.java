@@ -167,6 +167,6 @@ public class testController {
         Bookmark bm = bookmarkRepository.findByEmailAndTitle(email, title);
 
         bookmarkRepository.delete(bm);
-        return "bookmark delete success!";
+        return "success!";
     }
 }
