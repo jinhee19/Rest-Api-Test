@@ -13,7 +13,9 @@ public class Bookmark {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     private int bookmark_id;
+
     private String title;
+
     @Column(name="usr_email")
     private String email;
 
