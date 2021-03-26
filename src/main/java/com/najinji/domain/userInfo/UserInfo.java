@@ -12,9 +12,9 @@ import javax.persistence.*;
 @Entity
 public class UserInfo {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
     private int id;
     private String usr_name;
-    @Id
     private String email;
     private String sex;
     private int age;

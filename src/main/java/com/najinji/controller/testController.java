@@ -94,13 +94,17 @@ public class testController {
     // 특정 사용자 정보 가져오기(email를 사용해서)
     @PostMapping(value="/userinfo/{email}")
     public UserInfo getUserInfo(@PathVariable("email") String email){
-        return userInfoRepository.findById(email).orElse(null);
+        UserInfo info = userInfoRepository.findByEmail(email);
+        if(info == null)
+            return null;
+        else
+            return userInfoRepository.findByEmail(email);
     }
 
     // 사용자 정보 수정하기
     @PutMapping(value="/userinfo/{email}")
     public UserInfo updateUserInfo(@PathVariable("email") String email, @Valid @RequestBody UserInfo info){
-        UserInfo userInfo = userInfoRepository.findById(email).orElse(null);
+        UserInfo userInfo = userInfoRepository.findByEmail(email);
         userInfo.setSex(info.getSex());
         userInfo.setAge(info.getAge());
         userInfo.setResidence(info.getResidence());
